@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Przelicznik walut</title>
     <link href="css/style.css" rel="stylesheet">
@@ -23,18 +22,15 @@
     <h1 class="body__header">Przelicznik walut</h1>
     <main class="main">
         <form class="form js-form">
-            <!-- <fieldset> -->
-            <!-- <legend class="form__legend">Przelicz na złotówki</legend> -->
             <p class="form__paragraph">
                 <label><span class="form__labelText">Jaką walutę chcesz zamienić?</span>
                     <select name="changeFrom" class="form__field js-currencyFrom" required>
-                       <!-- Validator daje taką uwagę: The first child option element of a select element with a required attribute, and without a multiple attribute, and without a size attribute whose value is greater than 1, must have either an empty value attribute, or must have no text content -->
-                        <option>PLN</option>
-                        <option>EUR</option>
-                        <option>GBP</option>
-                        <option>USD</option>
-                        <option>CHF</option>
-                        <option>JPY</option>
+                        <option value="PLN">polski złoty</option>
+                        <option value="EUR">euro</option>
+                        <option value="GBP">funt brytyjski</option>
+                        <option value="USD">dolar amerykański</option>
+                        <option value="CHF">frank szwajcarski</option>
+                        <option value="JPY">jen japoński</option>
                     </select>
                 </label>
             </p>
@@ -46,23 +42,20 @@
             <p class="form__paragraph">
                 <label><span class="form__labelText">Na jaką walutę?</span>
                     <select name="changeTo" class="form__field js-currencyTo" required>
-                       <!-- Validator daje taką uwagę: The first child option element of a select element with a required attribute, and without a multiple attribute, and without a size attribute whose value is greater than 1, must have either an empty value attribute, or must have no text content -->
-                        <option>PLN</option>
-                        <option>EUR</option>
-                        <option>GBP</option>
-                        <option>USD</option>
-                        <option>CHF</option>
-                        <option>JPY</option>
+                        <option value="PLN">polski złoty</option>
+                        <option value="EUR">euro</option>
+                        <option value="GBP">funt brytyjski</option>
+                        <option value="USD">dolar amerykański</option>
+                        <option value="CHF">frank szwajcarski</option>
+                        <option value="JPY">jen japoński</option>
                     </select>
                 </label>
             </p>
             <p class="form__paragraph">
                 <button class="form__button">Przelicz!</button>
             </p>
-
             <p class="form__paragraph form__paragraph--last js-resultPhrase">Podaj wartości i waluty aby móc obliczyć.
             </p>
-            <!-- </fieldset> -->
         </form>
     </main>
     <p>Uwaga, wszystkie pola są wymagane.</p>
