@@ -1,0 +1,65 @@
+.form {}
+
+.form__legend {
+    display: inline-block;
+    width: 100%;
+    padding: 20px 0px;
+    background-color: #ddd;
+    color: #1f2b50;
+    border-radius: 10px;
+}
+
+.form__paragraph {
+    display: inline-block;
+    width: 100%;
+    padding: 20px 0px;
+    border-bottom: 1px #ddd solid;
+    margin: 0px;
+}
+
+.form__paragraph--last {
+    border: none;
+}
+
+.form__labelText {
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 50%;
+}
+
+.form__field {
+    display: inline-block;
+    margin: 10px;
+    width: 40%;
+    text-align: center;
+    background-color: #1f2b50;
+    border: none;
+    color: #ddd;
+    padding: 4px;
+}
+
+.form__button {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    background-color: #17203b;
+    color: #ddd;
+    padding: 8px;
+}
+
+.form__button:hover {
+    background-color: #1e2c55;
+}
+
+.form__field:hover {
+    background-color: #223672;
+}
+
+.form__button:active {
+    background-color: #223672;
+}
+
+/* rozumiem, że koloru obranowania przy wybranym/aktywnym polu formularza nie da się zmienić? 
+.form__field:active{
+    border-color: rgb(209, 5, 22);
+} */

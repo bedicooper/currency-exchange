@@ -1,0 +1,39 @@
+html {
+    box-sizing: border-box;
+    display: table;
+    margin: auto;
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.body {
+    font-family: Lato, sans-serif;
+    background-color: #11172a;
+    color: #ddd;
+}
+
+.body__header {
+    display: inline-block;
+    width: 100%;
+    padding: 6px;
+    background-color: #ddd;
+    font-family: Merriweather, serif;
+    color: #11172a;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.main {
+    max-width: 512px;
+    padding: 10px 20px;
+    background-color: #11172a;
+    border: 2px #ddd solid;
+    border-radius: 10px;
+}
