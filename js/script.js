@@ -14,6 +14,39 @@ let EUR = 4.72;
 let CHF = 4.77;
 let JPY = 0.032;
 
+const ratePLN = 1.00;
+const rateGBP = 5.48;
+const rateUSD = 4.72;
+const rateEUR = 4.72;
+const rateCHF = 4.77;
+const rateJPY = 0.032;
+
+
+const calculateFromValue = (amountFrom, currencyFrom) => {
+switch (currencyFrom) {
+    case "PLN":
+      return amountFrom * ratePLN;
+       
+    case "USD":
+        return amountFrom * rateUSD;
+       
+    case "EUR":
+        return amountFrom * rateEUR;
+       
+    case "GBP":
+        return amountFrom * rateGBP;
+        
+    case "CHF":
+        return amountFrom * rateCHF;
+        
+    case "JPY":
+        return amountFrom * rateJPY;
+       
+};
+};
+
+
+
 const updateResultText = (amountFrom, currencyFromElement, exchangeCalculation, currencyToElement) => {
     const resultPhraseElement = document.querySelector(".js-resultPhrase");
     resultPhraseElement.innerText = `${amountFrom} ${currencyFromElement.value} to ${exchangeCalculation.toFixed(2)} ${currencyToElement.value}`;
@@ -23,54 +56,39 @@ const updateResultText = (amountFrom, currencyFromElement, exchangeCalculation, 
 const onFormSubmit = (event) => {
     event.preventDefault();
 
-    let amountFrom = amountFromElement.value;
-    let currencyFrom
-    let currencyTo
-    let exchangeCalculation
-   
-    switch (currencyFromElement.value) {
+    const amountFromElement = document.querySelector(".js-amountFrom");
+    const currencyFromElement = document.querySelector(".js-currencyFrom");
+    const currencyToElement = document.querySelector(".js-currencyTo");
+    
+    const amountFrom = +amountFromElement.value; 
+    const currencyFrom = currencyFromElement.value;
+    const currencyTo = currencyToElement.value;
+    
+
+    switch (currencyTo) {
         case "PLN":
-            currencyFrom = PLN;
+            toRate = PLN;
             break;
         case "USD":
-            currencyFrom = USD;
+            toRate = USD;
             break;
         case "EUR":
-            currencyFrom = EUR;
+            toRate = EUR;
             break;
         case "GBP":
-            currencyFrom = GBP;
+            toRate = GBP;
             break;
         case "CHF":
-            currencyFrom = CHF;
+            toRate = CHF;
             break;
         case "JPY":
-            currencyFrom = JPY;
+            toRate = JPY;
             break;
     };
 
-    switch (currencyToElement.value) {
-        case "PLN":
-            currencyTo = PLN;
-            break;
-        case "USD":
-            currencyTo = USD;
-            break;
-        case "EUR":
-            currencyTo = EUR;
-            break;
-        case "GBP":
-            currencyTo = GBP;
-            break;
-        case "CHF":
-            currencyTo = CHF;
-            break;
-        case "JPY":
-            currencyTo = JPY;
-            break;
-    };
 
-    exchangeCalculation = (amountFrom * currencyFrom) / currencyTo;
+const fromValue = calculateFromValue (amountFrom, currencyFrom);
+const exchangeCalculation = fromValue / toRate;
 
     updateResultText(amountFrom, currencyFromElement, exchangeCalculation, currencyToElement);
 };
