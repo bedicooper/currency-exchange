@@ -11,11 +11,8 @@ html {
 
 .body {
     font-family: Lato, sans-serif;
-    /* background-color: #11172a; */
     color: #ddd;
-    padding: 10px
-    
-   
+    padding: 10px 
 }
 
 .body__header {
@@ -23,6 +20,7 @@ html {
     width: 100%;
     padding: 6px;
     background-color: #ddd;
+    color: #0a0b16;
     font-family: Merriweather, serif;
     text-align: center;
     border-radius: 10px;
@@ -35,7 +33,4 @@ html {
     background-color: #0a0b16;
     border: 2px #ddd solid;
     border-radius: 10px;
-    /* background-image: url("https://stsci-opo.org/STScI-01GGWD2F59V4TBRREMM03RZTYB.png");
-    background-size: 100%;
-    background-position: 50% 50%; */
 }
