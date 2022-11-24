@@ -1,3 +1,4 @@
+{
 let formElement = document.querySelector(".js-form");
 let amountFromElement = document.querySelector(".js-amountFrom");
 let currencyFromElement = document.querySelector(".js-currencyFrom");
@@ -18,7 +19,8 @@ const updateResultText = (amountFrom, currencyFromElement, exchangeCalculation, 
     resultPhraseElement.innerText = `${amountFrom} ${currencyFromElement.value} to ${exchangeCalculation.toFixed(2)} ${currencyToElement.value}`;
 };
 
-formElement.addEventListener("submit", (event) => {
+
+const onFormSubmit = (event) => {
     event.preventDefault();
 
     let amountFrom = amountFromElement.value;
@@ -26,7 +28,6 @@ formElement.addEventListener("submit", (event) => {
     let currencyTo
     let exchangeCalculation
    
-
     switch (currencyFromElement.value) {
         case "PLN":
             currencyFrom = PLN;
@@ -72,5 +73,13 @@ formElement.addEventListener("submit", (event) => {
     exchangeCalculation = (amountFrom * currencyFrom) / currencyTo;
 
     updateResultText(amountFrom, currencyFromElement, exchangeCalculation, currencyToElement);
-});
+};
 
+const init = () => {
+    const formElement = document.querySelector(".js-form");
+
+    formElement.addEventListener("submit", onFormSubmit);
+};
+
+init();
+}
