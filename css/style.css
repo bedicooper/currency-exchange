@@ -28,6 +28,7 @@ html {
 
 .main {
     max-width: 512px;
+    min-width: 280px;
     padding: 10px 20px;
     background-color: #11172a;
     border: 2px #ddd solid;

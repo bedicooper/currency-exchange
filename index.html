@@ -22,8 +22,12 @@
     <h1 class="body__header">Przelicznik walut</h1>
     <main class="main">
         <form class="form js-form">
-            <p class="form__paragraph">
-                <label><span class="form__labelText">Jaką walutę chcesz zamienić?</span>
+            <div class="form__container">
+                <div>
+                    <label for="changeFrom"><span class="">Jaką walutę chcesz zamienić?</span>
+                    </label>
+                </div>
+                <div>
                     <select name="changeFrom" class="form__field js-currencyFrom" required>
                         <option value="PLN">polski złoty</option>
                         <option value="EUR">euro</option>
@@ -32,15 +36,23 @@
                         <option value="CHF">frank szwajcarski</option>
                         <option value="JPY">jen japoński</option>
                     </select>
-                </label>
-            </p>
-            <p class="form__paragraph">
-                <label><span class="form__labelText">Podaj wartość jaką chcesz zamienić:</span>
+                </div>
+            </div>
+            <div class="form__container">
+                <div>
+                    <label for="amount"><span class="">Wartość jaką chcesz zamienić:</span>
+                    </label>
+                </div>
+                <div>
                     <input name="amount" type="number" step="0.01" min="0" class="form__field js-amountFrom" required>
-                </label>
-            </p>
-            <p class="form__paragraph">
-                <label><span class="form__labelText">Na jaką walutę?</span>
+                </div>
+            </div>
+            <div class="form__container">
+                <div>
+                    <label for="changeTo"><span class="">Na jaką walutę zamienić?</span>
+                    </label>
+                </div>
+                <div>
                     <select name="changeTo" class="form__field js-currencyTo" required>
                         <option value="PLN">polski złoty</option>
                         <option value="EUR">euro</option>
@@ -49,12 +61,13 @@
                         <option value="CHF">frank szwajcarski</option>
                         <option value="JPY">jen japoński</option>
                     </select>
-                </label>
-            </p>
-            <p class="form__paragraph">
+                </div>
+            </div>
+            <div class="form__container">
                 <button class="form__button">Przelicz!</button>
-            </p>
-            <p class="form__paragraph form__paragraph--last js-resultPhrase">Podaj wartości i waluty aby móc obliczyć.
+            </div>
+            <p class="form__paragraph form__paragraph--last js-resultPhrase">Podaj wartości i waluty aby móc
+                obliczyć.
             </p>
         </form>
     </main>
