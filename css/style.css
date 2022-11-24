@@ -2,6 +2,7 @@ html {
     box-sizing: border-box;
     display: table;
     margin: auto;
+    background: url("https://stsci-opo.org/STScI-01GGWD2F59V4TBRREMM03RZTYB.png") no-repeat top center fixed #0a0b16;
 }
 
 *, ::after, ::before {
@@ -10,9 +11,11 @@ html {
 
 .body {
     font-family: Lato, sans-serif;
-    background-color: #11172a;
+    /* background-color: #11172a; */
     color: #ddd;
     padding: 10px
+    
+   
 }
 
 .body__header {
@@ -21,16 +24,18 @@ html {
     padding: 6px;
     background-color: #ddd;
     font-family: Merriweather, serif;
-    color: #11172a;
     text-align: center;
     border-radius: 10px;
 }
 
 .main {
-    max-width: 512px;
+    max-width: 800px;
     min-width: 280px;
     padding: 10px 20px;
-    background-color: #11172a;
+    background-color: #0a0b16;
     border: 2px #ddd solid;
     border-radius: 10px;
+    /* background-image: url("https://stsci-opo.org/STScI-01GGWD2F59V4TBRREMM03RZTYB.png");
+    background-size: 100%;
+    background-position: 50% 50%; */
 }

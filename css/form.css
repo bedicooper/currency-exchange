@@ -22,11 +22,10 @@
 }
 
 .form__field {
-    /* display: inline-block; */
     margin: 10px;
     min-width: 150px;
     text-align: center;
-    background-color: #1f2b50;
+    background-color: #12152e;
     border: none;
     color: #ddd;
     padding: 4px;
@@ -36,19 +35,19 @@
     width: 100%;
     padding: 5px;
     border: none;
-    background-color: #17203b;
+    background-color: #12152e;
     color: #ddd;
     padding: 8px;
 }
 
 .form__button:hover {
-    background-color: #1e2c55;
+    background-color: #151a47;
 }
 
 .form__field:hover {
-    background-color: #223672;
+    background-color: #151a47;
 }
 
 .form__button:active {
-    background-color: #223672;
+    background-color: #122357;
 }
