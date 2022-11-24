@@ -8,15 +8,11 @@ html {
     box-sizing: inherit;
 }
 
-body {
-    display: table-cell;
-    vertical-align: middle;
-}
-
 .body {
     font-family: Lato, sans-serif;
     background-color: #11172a;
     color: #ddd;
+    padding: 10px
 }
 
 .body__header {
