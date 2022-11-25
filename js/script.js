@@ -23,13 +23,9 @@
         };
     };
 
-    const exchangeCalculation = (fromValue, toRate) => {
-        return fromValue / toRate;
-    }
-
-    const updateResultText = (amountFrom, currencyFrom, result, currencyTo) => {
+    const updateResultText = (text) => {
         const resultPhraseElement = document.querySelector(".js-resultPhrase");
-        resultPhraseElement.innerText = `${amountFrom} ${currencyFrom} to ${result.toFixed(2)} ${currencyTo}`;
+        resultPhraseElement.innerText = text;
     };
 
     const onFormSubmit = (event) => {
@@ -45,9 +41,9 @@
         const fromValue = convertCurrencyToRate(currencyFrom) * amountFrom;
         const toRate = convertCurrencyToRate(currencyTo);
 
-        const result = exchangeCalculation(fromValue, toRate);
+        const result = fromValue / toRate;
 
-        updateResultText(amountFrom, currencyFrom, result, currencyTo);
+        updateResultText(`${amountFrom} ${currencyFrom} to ${result.toFixed(2)} ${currencyTo}`);
     };
 
     const init = () => {
@@ -58,3 +54,4 @@
 
     init();
 }
+
