@@ -19,6 +19,8 @@
 
 .form__paragraph--last {
     border: none;
+    text-align: center;
+    font-size: 20px;
 }
 
 .form__field {
