@@ -6,52 +6,21 @@
     const rateCHF = 4.77;
     const rateJPY = 0.032;
 
-    const calculateFromValue = (amountFrom, currencyFrom) => {
-        switch (currencyFrom) {
+    const convertCurrencyToRate = (currency) => {
+        switch (currency) {
             case "PLN":
-                return amountFrom * ratePLN;
-
+                return ratePLN;
             case "USD":
-                return amountFrom * rateUSD;
-
+                return rateUSD;
             case "EUR":
-                return amountFrom * rateEUR;
-
+                return rateEUR;
             case "GBP":
-                return amountFrom * rateGBP;
-
+                return rateGBP;
             case "CHF":
-                return amountFrom * rateCHF;
-
+                return rateCHF;
             case "JPY":
-                return amountFrom * rateJPY;
-
+                return rateJPY;
         };
-    };
-
-    const calculateToRate = (currencyTo) => {
-        let rateTo
-        switch (currencyTo) {
-            case "PLN":
-                rateTo = ratePLN;
-                break;
-            case "USD":
-                rateTo = rateUSD;
-                break;
-            case "EUR":
-                rateTo = rateEUR;
-                break;
-            case "GBP":
-                rateTo = rateGBP;
-                break;
-            case "CHF":
-                rateTo = rateCHF;
-                break;
-            case "JPY":
-                rateTo = rateJPY;
-                break;
-        };
-        return rateTo;
     };
 
     const exchangeCalculation = (fromValue, toRate) => {
@@ -73,8 +42,8 @@
         const currencyFrom = currencyFromElement.value;
         const currencyTo = currencyToElement.value;
 
-        const fromValue = calculateFromValue(amountFrom, currencyFrom);
-        const toRate = calculateToRate(currencyTo);
+        const fromValue = convertCurrencyToRate(currencyFrom) * amountFrom;
+        const toRate = convertCurrencyToRate(currencyTo);
 
         const result = exchangeCalculation(fromValue, toRate);
 
