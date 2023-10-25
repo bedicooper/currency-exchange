@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Main from "./Main";
+import Header from "./Header";
+import Container from "./Container";
+import Section from "./Section";
+import Form from "./Form";
+import Footer from "./Footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Main >
+      <Header title={"Przelicznik walut"} />
+      <Container >
+        <Section
+          content={<Form />}
+        />
+        <Section
+          content={"Podaj wartości i waluty aby móc obliczyć."}
+        />
+      </Container >
+      <Footer title={"Uwaga, wszystkie pola są wymagane."} />
+    </Main >
   );
 }
 

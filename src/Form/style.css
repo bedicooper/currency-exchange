@@ -1,0 +1,39 @@
+.form__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+    border-bottom: 1px #ddd solid;
+    padding: 20px 0px;
+}
+
+.form__container--button {
+    grid-template-columns: 1fr;
+}
+
+.form__field {
+    width: 100%;
+    text-align: center;
+    background-color: hsl(220, 20%, 15%);
+    border: none;
+    color: #ddd;
+    padding: 4px;
+    transition: 200ms ease-in-out;
+}
+
+.form__field:hover {
+    background-color: hsl(220, 20%, 20%);
+}
+
+.form__button {
+    width: 100%;
+    border: none;
+    background-color: hsl(220, 20%, 15%);
+    color: #ddd;
+    padding: 8px;
+    transition: 200ms ease-in-out;
+}
+
+.form__button:hover {
+    background-color: hsl(220, 20%, 20%);
+}

@@ -1,0 +1,11 @@
+.header {
+    display: inline-block;
+    width: 100%;
+    margin: 20px 0;
+    padding: 8px;
+    background-color: #ddd;
+    color: #0a0b16;
+    font-family: Merriweather, serif;
+    text-align: center;
+    border-radius: 10px;
+}
