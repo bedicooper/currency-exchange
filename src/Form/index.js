@@ -1,4 +1,5 @@
 import "./style.css";
+import { currencies } from "../currencies";
 
 const Form = ({ calculateResult, amount, setAmount, currencyFrom, setCurrencyFrom, currencyTo, setCurrencyTo }) => {
 
@@ -9,7 +10,7 @@ const Form = ({ calculateResult, amount, setAmount, currencyFrom, setCurrencyFro
     const onFormSubmit = (evnet) => {
         evnet.preventDefault();
         calculateResult(amount, currencyTo, currencyFrom);
-     };
+    };
 
     return (
         <form className="form" onSubmit={onFormSubmit}>
@@ -20,13 +21,11 @@ const Form = ({ calculateResult, amount, setAmount, currencyFrom, setCurrencyFro
                 <select
                     value={currencyFrom} onChange={onSelectFromChange}
                     name="changeFrom" className="form__field" required>
-                    <option />
-                    <option value="PLN">polski złoty</option>
-                    <option value="EUR">euro</option>
-                    <option value="GBP">funt brytyjski</option>
-                    <option value="USD">dolar amerykański</option>
-                    <option value="CHF">frank szwajcarski</option>
-                    <option value="JPY">jen japoński</option>
+                    {currencies.map(currency =>
+                        <option key={currency.code} value={currency.code} >
+                            {currency.name}
+                        </option>)}
+
                 </select>
             </div>
             <div className="form__container">
@@ -51,13 +50,10 @@ const Form = ({ calculateResult, amount, setAmount, currencyFrom, setCurrencyFro
                 <select
                     value={currencyTo} onChange={onSelectToChange}
                     name="changeTo" className="form__field" required>
-                    <option />
-                    <option value="PLN">polski złoty</option>
-                    <option value="EUR">euro</option>
-                    <option value="GBP">funt brytyjski</option>
-                    <option value="USD">dolar amerykański</option>
-                    <option value="CHF">frank szwajcarski</option>
-                    <option value="JPY">jen japoński</option>
+                    {currencies.map(currency =>
+                        <option key={currency.code} value={currency.code} >
+                            {currency.name}
+                        </option>)}
                 </select>
             </div>
             <div className="form__container form__container--button">
