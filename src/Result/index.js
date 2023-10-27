@@ -1,11 +1,18 @@
 import "./style.css";
 
-const Result = ({ amount, currencyFrom, currencyTo, result }) => (
+const Result = ({ result }) => (
     <p className="result__paragraph">
-        {
-            result
-                ? `${amount} ${currencyFrom} to ${result.toFixed(2)} ${currencyTo}`
-                : `Podaj wartości i waluty aby móc obliczyć.`}
+        {!!result.resultValue
+            ?
+            <>
+                {result.amount}&nbsp;{result.from}&nbsp;{'to '}
+                <strong>
+                    {result.resultValue.toFixed(2)}&nbsp;{result.to}
+                </strong>
+            </>
+            :
+            `Podaj wartości i waluty aby móc obliczyć.`
+        }
     </p>
 );
 
