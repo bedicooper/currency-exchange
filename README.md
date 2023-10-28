@@ -24,7 +24,7 @@ https://bedicooper.github.io/currency-exchange/
 My calculator is build on a simple form, with just a few currencies to choose from.
 
 Take a look:
-![looping GIF showing interaction with the app.](https://raw.githubusercontent.com/bedicooper/currency-exchange/src/img/currExchAnimation.gif)
+![looping GIF showing interaction with the app.](https://github.com/bedicooper/currency-exchange/blob/main/src/img/currExchAnimation.gif?raw=true)
 
 ### What's new? _v.0.2.0_
 **0.2.0:**
