@@ -44,7 +44,7 @@ function App() {
           />
         </div>
       </Container >
-      <Footer title={"Uwaga, wszystkie pola są wymagane."} />
+      <Footer />
     </Main >
   );
 }
