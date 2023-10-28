@@ -17,12 +17,18 @@ https://bedicooper.github.io/currency-exchange/
 |               |                 |                     | Babel            |
 |               |                 |                     | React DOM        |
 |               |                 |                     | useState hook    |
+|               |                 |                     | useEffect hook   |
+|               |                 |                     | setInterval      |
 
 ## What's inside?
 My calculator is build on a simple form, with just a few currencies to choose from.
 
 Take a look:
 ![looping GIF showing interaction with the app.](https://raw.githubusercontent.com/bedicooper/currency-exchange/src/img/currExchAnimation.gif)
+
+### What's new? _v.0.2.0_
+**0.2.0:**
+I've added a Clock component to display current date and time in one second intervals.
 
 ### How to use my App?
 1. Select the currency You want to convert from the first list,
