@@ -11,6 +11,14 @@
     grid-template-columns: 1fr;
 }
 
+.form__container--clock {
+    grid-template-columns: 1fr;
+    text-align: right;
+    border-bottom: none;
+    padding: 0px;
+    font-family: 'Inconsolata', monospace;
+}
+
 .form__field {
     width: 100%;
     text-align: center;

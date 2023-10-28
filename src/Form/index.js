@@ -1,5 +1,6 @@
 import "./style.css";
 import { currencies } from "../currencies";
+import Clock from "./Clock";
 
 const Form = ({ calculateResult, amount, setAmount, currencyFrom, setCurrencyFrom, currencyTo, setCurrencyTo }) => {
 
@@ -14,6 +15,9 @@ const Form = ({ calculateResult, amount, setAmount, currencyFrom, setCurrencyFro
 
     return (
         <form className="form" onSubmit={onFormSubmit}>
+            <div className="form__container form__container--clock">
+                <Clock/>
+            </div>
             <div className="form__container">
                 <label htmlFor="changeFrom">
                     <span>Jaką walutę chcesz zamienić?</span>
@@ -25,7 +29,6 @@ const Form = ({ calculateResult, amount, setAmount, currencyFrom, setCurrencyFro
                         <option key={currency.code} value={currency.code} >
                             {currency.name}
                         </option>)}
-
                 </select>
             </div>
             <div className="form__container">
