@@ -4,9 +4,13 @@ export const Clock = () => {
     let [currentDate, setCurrnetDate] = useState(new Date());
 
     useEffect(() => {
-        setInterval(() => {
+        const intervalId = setInterval(() => {
             setCurrnetDate(currentDate = new Date());
         }, 1000);
+
+        return () => {
+            clearInterval(intervalId);
+        };
     }, []);
 
     return (
@@ -15,7 +19,7 @@ export const Clock = () => {
             {' '}
             {currentDate.toLocaleString(
                 undefined, {
-                    month: "long", weekday: "long", day: "numeric"
+                month: "long", weekday: "long", day: "numeric"
             })
             }
             {', '}
