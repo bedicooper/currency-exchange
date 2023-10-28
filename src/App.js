@@ -40,9 +40,6 @@ function App() {
         </div>
         <div>
           <Result
-            amount={amount}
-            currencyFrom={currencyFrom}
-            currencyTo={currencyTo}
             result={result}
           />
         </div>
