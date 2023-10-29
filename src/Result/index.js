@@ -11,7 +11,7 @@ const Result = ({ result }) => (
                 </strong>
             </>
             :
-            `Podaj wartości i waluty aby móc obliczyć.`
+            `Podaj wartość i waluty aby móc obliczyć.`
         }
     </p>
 );
