@@ -1,33 +1,29 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export const Clock = () => {
     let [currentDate, setCurrnetDate] = useState(new Date());
+    const intervalId = useRef(null);
 
     useEffect(() => {
-        const intervalId = setInterval(() => {
+        intervalId.current = setInterval(() => {
             setCurrnetDate(currentDate = new Date());
         }, 1000);
 
         return () => {
-            clearInterval(intervalId);
+            clearInterval(intervalId.current);
         };
     }, []);
 
+    const currentLocaleDay = currentDate.toLocaleString(
+        undefined, { month: "long", weekday: "long", day: "numeric" }
+    );
+    const currentLocaleTime = currentDate.toLocaleTimeString();
+
     return (
         <p>
-            Dzisiaj jest
-            {' '}
-            {currentDate.toLocaleString(
-                undefined, {
-                month: "long", weekday: "long", day: "numeric"
-            })
-            }
-            {', '}
-            {currentDate.toLocaleTimeString()
-            }
+            {`Dzisiaj jest ${currentLocaleDay}, ${currentLocaleTime}`}
         </p >
     )
-
 };
 
 export default Clock;
