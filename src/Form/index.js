@@ -1,12 +1,18 @@
+import { useEffect, useRef } from "react";
 import "./style.css";
 import { currencies } from "../currencies";
 import Clock from "./Clock";
 
 const Form = ({ calculateResult, amount, setAmount, currencyFrom, setCurrencyFrom, currencyTo, setCurrencyTo }) => {
+    const inputRef = useRef(null);
 
     const onInputChange = ({ target }) => setAmount(target.value);
     const onSelectFromChange = ({ target }) => setCurrencyFrom(target.value);
     const onSelectToChange = ({ target }) => setCurrencyTo(target.value);
+
+    useEffect(() => {
+        inputRef.current.focus();
+    }, []);
 
     const onFormSubmit = (evnet) => {
         evnet.preventDefault();
@@ -16,7 +22,23 @@ const Form = ({ calculateResult, amount, setAmount, currencyFrom, setCurrencyFro
     return (
         <form className="form" onSubmit={onFormSubmit}>
             <div className="form__container form__container--clock">
-                <Clock/>
+                <Clock />
+            </div>
+            <div className="form__container">
+                <label htmlFor="amount">
+                    <span>Wartość jaką chcesz zamienić:</span>
+                </label>
+                <input
+                    ref={inputRef}
+                    value={amount}
+                    onChange={onInputChange}
+                    name="amount"
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    className="form__field"
+                    required
+                />
             </div>
             <div className="form__container">
                 <label htmlFor="changeFrom">
@@ -30,21 +52,6 @@ const Form = ({ calculateResult, amount, setAmount, currencyFrom, setCurrencyFro
                             {currency.name}
                         </option>)}
                 </select>
-            </div>
-            <div className="form__container">
-                <label htmlFor="amount">
-                    <span>Wartość jaką chcesz zamienić:</span>
-                </label>
-                <input
-                    value={amount}
-                    onChange={onInputChange}
-                    name="amount"
-                    type="number"
-                    step="0.01"
-                    min="0"
-                    className="form__field"
-                    required
-                />
             </div>
             <div className="form__container">
                 <label htmlFor="changeTo">
