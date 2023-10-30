@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { currencies } from "./currencies"
+import { currencies } from "./currencies";
 import Main from "./Main";
 import Header from "./Header";
 import Form from "./Form";
 import Footer from "./Footer";
+import { GlobalStyle } from "./GlobalStyle";
 
 function App() {
 
@@ -25,6 +26,8 @@ function App() {
   };
 
   return (
+    <>
+    <GlobalStyle />
     <Main >
       <Header title={"Przelicznik walut"} />
       <Form
@@ -36,6 +39,7 @@ function App() {
       />
       <Footer />
     </Main >
+    </>
   );
 }
 
