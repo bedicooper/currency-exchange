@@ -2,8 +2,9 @@ import { useEffect, useRef } from "react";
 import "./style.css";
 import { currencies } from "../currencies";
 import Clock from "./Clock";
+import Result from "./Result";
 
-const Form = ({ calculateResult, amount, setAmount, currencyFrom, setCurrencyFrom, currencyTo, setCurrencyTo }) => {
+const Form = ({ result, calculateResult, amount, setAmount, currencyFrom, setCurrencyFrom, currencyTo, setCurrencyTo }) => {
     const inputRef = useRef(null);
 
     const onInputChange = ({ target }) => setAmount(target.value);
@@ -68,6 +69,11 @@ const Form = ({ calculateResult, amount, setAmount, currencyFrom, setCurrencyFro
             </div>
             <div className="form__container form__container--button">
                 <button className="form__button">Przelicz!</button>
+            </div>
+            <div className="form__container form__container--result">
+                <Result             
+                result={result} 
+                />
             </div>
         </form>
     )

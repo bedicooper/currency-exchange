@@ -2,8 +2,6 @@ import { useState } from "react";
 import { currencies } from "./currencies"
 import Main from "./Main";
 import Header from "./Header";
-import Container from "./Container";
-import Result from "./Result";
 import Form from "./Form";
 import Footer from "./Footer";
 
@@ -29,21 +27,13 @@ function App() {
   return (
     <Main >
       <Header title={"Przelicznik walut"} />
-      <Container >
-        <div>
-          <Form
-            calculateResult={calculateResult}
-            amount={amount} setAmount={setAmount}
-            currencyFrom={currencyFrom} setCurrencyFrom={setCurrencyFrom}
-            currencyTo={currencyTo} setCurrencyTo={setCurrencyTo}
-          />
-        </div>
-        <div>
-          <Result
-            result={result}
-          />
-        </div>
-      </Container >
+      <Form
+        result={result}
+        calculateResult={calculateResult}
+        amount={amount} setAmount={setAmount}
+        currencyFrom={currencyFrom} setCurrencyFrom={setCurrencyFrom}
+        currencyTo={currencyTo} setCurrencyTo={setCurrencyTo}
+      />
       <Footer />
     </Main >
   );

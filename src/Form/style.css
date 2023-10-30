@@ -1,3 +1,11 @@
+.form {
+    color: #ddd;
+    background-color: #12171e;
+    border: 2px #ddd solid;
+    border-radius: 10px;
+    padding: 20px;
+}
+
 .form__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -17,6 +25,14 @@
     border-bottom: none;
     padding: 0px;
     font-family: 'Inconsolata', monospace;
+}
+
+.form__container--result {
+    grid-template-columns: 1fr;
+    border-bottom: none;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px 0 0 0;
 }
 
 .form__field {
