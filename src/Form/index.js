@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import "./style.css";
+import { Wrapper, Container, Field, Button } from "./styled";
 import { currencies } from "../currencies";
 import Clock from "./Clock";
 import Result from "./Result";
@@ -21,15 +21,15 @@ const Form = ({ result, calculateResult, amount, setAmount, currencyFrom, setCur
     };
 
     return (
-        <form className="form" onSubmit={onFormSubmit}>
-            <div className="form__container form__container--clock">
+        <Wrapper onSubmit={onFormSubmit}>
+            <Container clock="true">
                 <Clock />
-            </div>
-            <div className="form__container">
+            </Container>
+            <Container>
                 <label htmlFor="amount">
                     <span>Wartość jaką chcesz zamienić:</span>
                 </label>
-                <input
+                <Field
                     ref={inputRef}
                     value={amount}
                     onChange={onInputChange}
@@ -37,45 +37,50 @@ const Form = ({ result, calculateResult, amount, setAmount, currencyFrom, setCur
                     type="number"
                     step="0.01"
                     min="0"
-                    className="form__field"
                     required
                 />
-            </div>
-            <div className="form__container">
+            </Container>
+            <Container>
                 <label htmlFor="changeFrom">
                     <span>Jaką walutę chcesz zamienić?</span>
                 </label>
-                <select
-                    value={currencyFrom} onChange={onSelectFromChange}
-                    name="changeFrom" className="form__field" required>
+                <Field as="select"
+                    value={currencyFrom}
+                    onChange={onSelectFromChange}
+                    name="changeFrom"
+                    required
+                >
                     {currencies.map(currency =>
                         <option key={currency.code} value={currency.code} >
                             {currency.name}
                         </option>)}
-                </select>
-            </div>
-            <div className="form__container">
+                </Field>
+            </Container>
+            <Container>
                 <label htmlFor="changeTo">
                     <span>Na jaką walutę zamienić?</span>
                 </label>
-                <select
-                    value={currencyTo} onChange={onSelectToChange}
-                    name="changeTo" className="form__field" required>
+                <Field as="select"
+                    value={currencyTo}
+                    onChange={onSelectToChange}
+                    name="changeTo"
+                    required
+                >
                     {currencies.map(currency =>
                         <option key={currency.code} value={currency.code} >
                             {currency.name}
                         </option>)}
-                </select>
-            </div>
-            <div className="form__container form__container--button">
-                <button className="form__button">Przelicz!</button>
-            </div>
-            <div className="form__container form__container--result">
-                <Result             
-                result={result} 
+                </Field>
+            </Container>
+            <Container button="true">
+                <Button>Przelicz!</Button>
+            </Container>
+            <Container result="true">
+                <Result
+                    result={result}
                 />
-            </div>
-        </form>
+            </Container>
+        </Wrapper>
     )
 };
 

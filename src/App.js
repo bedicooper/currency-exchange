@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { currencies } from "./currencies";
 import Main from "./Main";
-import Header from "./Header";
+import TitleBlock from "./TitleBlock";
 import Form from "./Form";
 import Footer from "./Footer";
 import { GlobalStyle } from "./GlobalStyle";
@@ -29,7 +29,7 @@ function App() {
     <>
     <GlobalStyle />
     <Main >
-      <Header title={"Przelicznik walut"} />
+      <TitleBlock title={"Przelicznik walut"} />
       <Form
         result={result}
         calculateResult={calculateResult}

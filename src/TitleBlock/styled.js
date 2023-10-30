@@ -1,6 +1,6 @@
-.header {
-    display: inline-block;
-    width: 100%;
+import styled from "styled-components";
+
+export const Header = styled.h1`
     margin: 20px 0;
     padding: 8px;
     background-color: #ddd;
@@ -8,4 +8,4 @@
     font-family: Merriweather, serif;
     text-align: center;
     border-radius: 10px;
-}
+`;
