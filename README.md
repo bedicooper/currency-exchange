@@ -13,26 +13,30 @@ https://bedicooper.github.io/currency-exchange/
 |   HTML        |   CSS           |   JavaScript        | ReactJS          |
 | :---:         | :---:           | :---:               | :---:            |
 | Google Fonts  | Normalize CSS   | ES6                 | create-react-app |
-| BEM           | Grid            |                     | Webpack          |
-|               |                 |                     | Babel            |
+| BEM           | grid            |                     | Webpack          |
+|               | media queries   |                     | Babel            |
 |               |                 |                     | React DOM        |
-|               |                 |                     | useState hook    |
-|               |                 |                     | useEffect hook   |
+|               |                 |                     | State, Effect and Ref hooks    |
+|               |                 |                     | Custom hooks     |
 |               |                 |                     | setInterval      |
+|               |                 |                     | Style Components |
 
 ## What's inside?
 My calculator is build on a simple form, with just a few currencies to choose from.
 
-Take a look:
+Take a look (v.0.1.0):
 ![looping GIF showing interaction with the app.](https://github.com/bedicooper/currency-exchange/blob/main/src/img/currExchAnimation.gif?raw=true)
 
-### What's new? _v.0.2.0_
+### What's new? _v.0.3.0_
+**0.3.0:**
+App structure overhall, custom hooks and Style Components.
+
 **0.2.0:**
 I've added a Clock component to display current date and time in one second intervals.
 
 ### How to use my App?
-1. Select the currency You want to convert from the first list,
-2. Enter the amount of money You want to convert,
+1. Enter the amount of money You want to convert,
+2. Select the currency You want to convert from the first list,
 3. Select the currency you are converting to, form the second list,
 4. Click the button to convert,
 5. The resut is displayed under the button.
