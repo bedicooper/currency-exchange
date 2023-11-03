@@ -4,7 +4,6 @@ import Main from "./Main";
 import TitleBlock from "./TitleBlock";
 import Form from "./Form";
 import Footer from "./Footer";
-import { GlobalStyle } from "./GlobalStyle";
 
 function App() {
 
@@ -27,18 +26,17 @@ function App() {
 
   return (
     <>
-    <GlobalStyle />
-    <Main >
-      <TitleBlock title={"Przelicznik walut"} />
-      <Form
-        result={result}
-        calculateResult={calculateResult}
-        amount={amount} setAmount={setAmount}
-        currencyFrom={currencyFrom} setCurrencyFrom={setCurrencyFrom}
-        currencyTo={currencyTo} setCurrencyTo={setCurrencyTo}
-      />
-      <Footer />
-    </Main >
+      <Main >
+        <TitleBlock title={"Przelicznik walut"} />
+        <Form
+          result={result}
+          calculateResult={calculateResult}
+          amount={amount} setAmount={setAmount}
+          currencyFrom={currencyFrom} setCurrencyFrom={setCurrencyFrom}
+          currencyTo={currencyTo} setCurrencyTo={setCurrencyTo}
+        />
+        <Footer />
+      </Main >
     </>
   );
 }
