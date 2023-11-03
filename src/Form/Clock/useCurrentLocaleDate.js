@@ -14,10 +14,5 @@ export const useCurrentLocaleDate = () => {
         };
     }, []);
 
-    const currentLocaleDay = currentDate.toLocaleString(
-        undefined, { month: "long", weekday: "long", day: "numeric" }
-    );
-    const currentLocaleTime = currentDate.toLocaleTimeString();
-
-    return { currentLocaleDay, currentLocaleTime };
+    return currentDate;
 };
