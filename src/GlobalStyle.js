@@ -18,3 +18,10 @@ body {
   background-image: url('${background}');
 }
 `;
+
+export const theme = {
+  primaryColor: '#12171e',
+  secondaryColor: '#ddd',
+  accentColor: 'hsl(220, 20%, 15%)',
+  accentHover: 'hsl(220, 20%, 20%)',
+};

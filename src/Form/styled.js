@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
 
 export const Wrapper = styled.form`
-    color: #ddd;
-    background-color: #12171e;
-    border: 2px #ddd solid;
+    color: ${({ theme }) => theme.secondaryColor};
+    background-color: ${({ theme }) => theme.primaryColor};
+    border: 2px solid ${({ theme }) => theme.secondaryColor};
     border-radius: 10px;
     padding: 20px;
 `;
@@ -13,7 +13,7 @@ export const Container = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
     align-items: center;
-    border-bottom: 1px #ddd solid;
+    border-bottom: 1px solid ${({ theme }) => theme.secondaryColor};
     padding: 20px 0px;
 
     @media (max-width: 524px) {
@@ -45,26 +45,26 @@ export const Container = styled.div`
 export const Field = styled.input`
     width: 100%;
     text-align: center;
-    background-color: hsl(220, 20%, 15%);
+    background-color: ${({ theme }) => theme.accentColor};
     border: none;
-    color: #ddd;
+    color: ${({ theme }) => theme.secondaryColor};
     padding: 4px;
     transition: 200ms ease-in-out;
 
     &:hover {
-        background-color: hsl(220, 20%, 20%);
+        background-color: ${({ theme }) => theme.accentHover};
     }
 `;
 
 export const Button = styled.button`
     width: 100%;
     border: none;
-    background-color: hsl(220, 20%, 15%);
-    color: #ddd;
+    background-color: ${({ theme }) => theme.accentColor};
+    color: ${({ theme }) => theme.secondaryColor};
     padding: 8px;
     transition: 200ms ease-in-out;
 
     &:hover {
-        background-color: hsl(220, 20%, 20%);
+        background-color: ${({ theme }) => theme.accentHover};
     }
 `;
