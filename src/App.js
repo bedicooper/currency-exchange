@@ -1,32 +1,25 @@
-import { useState } from "react";
-import { currencies } from "./currencies";
-import Main from "./Main";
+import { MainContainer } from "./Main/MainContainer";
 import TitleBlock from "./TitleBlock";
 import Form from "./Form";
 import Footer from "./Footer";
+import { useResult } from "./useResult";
 
 function App() {
 
-  const [currencyFrom, setCurrencyFrom] = useState(currencies[0].code);
-  const [currencyTo, setCurrencyTo] = useState(currencies[0].code);
-  const [amount, setAmount] = useState("");
-  const [result, setResult] = useState({});
-
-  const calculateResult = (amount, currencyTo, currencyFrom) => {
-    const currencyToRate = currencies.find(currency => currency.code === currencyTo).rate;
-    const currencyFromRate = currencies.find(currency => currency.code === currencyFrom).rate;
-
-    setResult({
-      amount: +amount,
-      from: currencyFrom,
-      resultValue: currencyFromRate * amount / currencyToRate,
-      to: currencyTo,
-    });
-  };
+  const {
+    result,
+    amount,
+    currencyFrom,
+    currencyTo,
+    calculateResult,
+    setAmount,
+    setCurrencyFrom,
+    setCurrencyTo,
+  } = useResult();
 
   return (
     <>
-      <Main >
+      <MainContainer>
         <TitleBlock title={"Przelicznik walut"} />
         <Form
           result={result}
@@ -36,7 +29,7 @@ function App() {
           currencyTo={currencyTo} setCurrencyTo={setCurrencyTo}
         />
         <Footer />
-      </Main >
+      </MainContainer>
     </>
   );
 }
