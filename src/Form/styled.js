@@ -20,7 +20,7 @@ export const Container = styled.div`
         grid-template-columns: 1fr;
     }
 
-    ${({ clock }) => clock && css`
+    ${({ $clock }) => $clock && css`
         grid-template-columns: 1fr;
         text-align: right;
         border-bottom: none;
@@ -28,12 +28,12 @@ export const Container = styled.div`
         font-family: 'Inconsolata', monospace;
     `}
 
-    ${({ button }) => button && css`
+    ${({ $button }) => $button && css`
         grid-template-columns: 1fr;
         border-bottom: none;
     `}
 
-    ${({ result }) => result && css`
+    ${({ $result }) => $result && css`
         grid-template-columns: 1fr;
         border-bottom: none;
         font-size: 20px;

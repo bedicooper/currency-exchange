@@ -22,7 +22,7 @@ const Form = ({ result, calculateResult, amount, setAmount, currencyFrom, setCur
 
     return (
         <Wrapper onSubmit={onFormSubmit}>
-            <Container clock="true">
+            <Container $clock>
                 <Clock />
             </Container>
             <Container>
@@ -33,7 +33,7 @@ const Form = ({ result, calculateResult, amount, setAmount, currencyFrom, setCur
                     ref={inputRef}
                     value={amount}
                     onChange={onInputChange}
-                    name="amount"
+                    id="amount"
                     type="number"
                     step="0.01"
                     min="0"
@@ -47,7 +47,7 @@ const Form = ({ result, calculateResult, amount, setAmount, currencyFrom, setCur
                 <Field as="select"
                     value={currencyFrom}
                     onChange={onSelectFromChange}
-                    name="changeFrom"
+                    id="changeFrom"
                     required
                 >
                     {currencies.map(currency =>
@@ -63,7 +63,7 @@ const Form = ({ result, calculateResult, amount, setAmount, currencyFrom, setCur
                 <Field as="select"
                     value={currencyTo}
                     onChange={onSelectToChange}
-                    name="changeTo"
+                    id="changeTo"
                     required
                 >
                     {currencies.map(currency =>
@@ -72,10 +72,10 @@ const Form = ({ result, calculateResult, amount, setAmount, currencyFrom, setCur
                         </option>)}
                 </Field>
             </Container>
-            <Container button="true">
+            <Container $button>
                 <Button>Przelicz!</Button>
             </Container>
-            <Container result="true">
+            <Container $result>
                 <Result
                     result={result}
                 />
