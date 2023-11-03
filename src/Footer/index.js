@@ -1,9 +1,4 @@
-import styled from "styled-components";
-
-const FooterContainer = styled.div`
-    padding: 10px 20px;
-    color: #ddd;
-`;
+import { FooterContainer } from "./FooterContainer";
 
 const Footer = () => {
     const ratesUpdateDate = new Date(2023, 9, 25);
