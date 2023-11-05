@@ -2,5 +2,5 @@ import styled from "styled-components";
 
 export const FooterContainer = styled.div`
     padding: 10px 20px;
-    color: ${({ theme }) => theme.secondaryColor};
+    color: ${({ theme }) => theme.color.secondary};
 `;

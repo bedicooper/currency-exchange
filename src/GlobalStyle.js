@@ -6,9 +6,7 @@ html {
   box-sizing: border-box;
 }
 
-*,
-::after,
-::before {
+*, ::after, ::before {
   box-sizing: inherit;
 }
 
@@ -20,8 +18,14 @@ body {
 `;
 
 export const theme = {
-  primaryColor: '#12171e',
-  secondaryColor: '#ddd',
-  accentColor: 'hsl(220, 20%, 15%)',
-  accentHover: 'hsl(220, 20%, 20%)',
+  color: {
+    primary: '#12171e',
+    secondary: '#ddd',
+    accent: 'hsl(220, 20%, 15%)',
+    accentHover: 'hsl(220, 20%, 20%)',
+  },
+  brakepoints: {
+      moblieMax: 524,
+  },
+
 };

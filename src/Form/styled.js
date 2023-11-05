@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
 
 export const Wrapper = styled.form`
-    color: ${({ theme }) => theme.secondaryColor};
-    background-color: ${({ theme }) => theme.primaryColor};
-    border: 2px solid ${({ theme }) => theme.secondaryColor};
+    color: ${({ theme }) => theme.color.secondary};
+    background-color: ${({ theme }) => theme.color.primary};
+    border: 2px solid ${({ theme }) => theme.color.secondary};
     border-radius: 10px;
     padding: 20px;
 `;
@@ -13,10 +13,10 @@ export const Container = styled.div`
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
     align-items: center;
-    border-bottom: 1px solid ${({ theme }) => theme.secondaryColor};
+    border-bottom: 1px solid ${({ theme }) => theme.color.secondary};
     padding: 20px 0px;
 
-    @media (max-width: 524px) {
+    @media (max-width: ${({ theme }) => theme.brakepoints.moblieMax}px) {
         grid-template-columns: 1fr;
     }
 
@@ -45,26 +45,26 @@ export const Container = styled.div`
 export const Field = styled.input`
     width: 100%;
     text-align: center;
-    background-color: ${({ theme }) => theme.accentColor};
+    background-color: ${({ theme }) => theme.color.accent};
     border: none;
-    color: ${({ theme }) => theme.secondaryColor};
+    color: ${({ theme }) => theme.color.secondary};
     padding: 4px;
     transition: 200ms ease-in-out;
 
     &:hover {
-        background-color: ${({ theme }) => theme.accentHover};
+        background-color: ${({ theme }) => theme.color.accentHover};
     }
 `;
 
 export const Button = styled.button`
     width: 100%;
     border: none;
-    background-color: ${({ theme }) => theme.accentColor};
-    color: ${({ theme }) => theme.secondaryColor};
+    background-color: ${({ theme }) => theme.color.accent};
+    color: ${({ theme }) => theme.color.secondary};
     padding: 8px;
     transition: 200ms ease-in-out;
 
     &:hover {
-        background-color: ${({ theme }) => theme.accentHover};
+        background-color: ${({ theme }) => theme.color.accentHover};
     }
 `;
