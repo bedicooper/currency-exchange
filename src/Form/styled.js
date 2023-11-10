@@ -6,6 +6,10 @@ export const Wrapper = styled.form`
     border: 2px solid ${({ theme }) => theme.color.secondary};
     border-radius: 10px;
     padding: 20px;
+    
+    ${({ $hidden }) => $hidden && css`
+        display: none;
+    `}
 `;
 
 export const Container = styled.div`

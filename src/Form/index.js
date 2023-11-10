@@ -4,7 +4,7 @@ import { currencies } from "../currencies";
 import Clock from "./Clock";
 import Result from "./Result";
 
-const Form = ({ result, calculateResult, amount, setAmount, currencyFrom, setCurrencyFrom, currencyTo, setCurrencyTo }) => {
+const Form = ({ ratesData, result, calculateResult, amount, setAmount, currencyFrom, setCurrencyFrom, currencyTo, setCurrencyTo }) => {
     const inputRef = useRef(null);
 
     const onInputChange = ({ target }) => setAmount(target.value);
@@ -21,7 +21,9 @@ const Form = ({ result, calculateResult, amount, setAmount, currencyFrom, setCur
     };
 
     return (
-        <Wrapper onSubmit={onFormSubmit}>
+        <Wrapper onSubmit={onFormSubmit}
+        $hidden={!ratesData.fetchStatus}
+        >
             <Container $clock>
                 <Clock />
             </Container>
