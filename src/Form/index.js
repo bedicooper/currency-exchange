@@ -1,10 +1,9 @@
 import { useEffect, useRef } from "react";
 import { Wrapper, Container, Field, Button } from "./styled";
-import { currencies } from "../currencies";
-import Clock from "./Clock";
-import Result from "./Result";
+import { Clock } from "./Clock";
+import { Result } from "./Result";
 
-const Form = ({ ratesData, result, calculateResult, amount, setAmount, currencyFrom, setCurrencyFrom, currencyTo, setCurrencyTo }) => {
+export const Form = ({ ratesData, result, calculateResult, amount, setAmount, currencyFrom, setCurrencyFrom, currencyTo, setCurrencyTo }) => {
     const inputRef = useRef(null);
 
     const onInputChange = ({ target }) => setAmount(target.value);
@@ -22,7 +21,7 @@ const Form = ({ ratesData, result, calculateResult, amount, setAmount, currencyF
 
     return (
         <Wrapper onSubmit={onFormSubmit}
-        $hidden={!ratesData.fetchStatus}
+            $hidden={!ratesData.fetchStatus}
         >
             <Container $clock>
                 <Clock />
@@ -52,9 +51,9 @@ const Form = ({ ratesData, result, calculateResult, amount, setAmount, currencyF
                     id="changeFrom"
                     required
                 >
-                    {currencies.map(currency =>
+                    {ratesData.rateValues.map(currency =>
                         <option key={currency.code} value={currency.code} >
-                            {currency.name}
+                            {currency.code}
                         </option>)}
                 </Field>
             </Container>
@@ -68,9 +67,9 @@ const Form = ({ ratesData, result, calculateResult, amount, setAmount, currencyF
                     id="changeTo"
                     required
                 >
-                    {currencies.map(currency =>
+                    {ratesData.rateValues.map(currency =>
                         <option key={currency.code} value={currency.code} >
-                            {currency.name}
+                            {currency.code}
                         </option>)}
                 </Field>
             </Container>
@@ -85,5 +84,3 @@ const Form = ({ ratesData, result, calculateResult, amount, setAmount, currencyF
         </Wrapper>
     )
 };
-
-export default Form;

@@ -1,4 +1,4 @@
-const Result = ({ result }) => (
+export const Result = ({ result }) => (
     <p>
         {!!result.resultValue
             ?
@@ -13,5 +13,3 @@ const Result = ({ result }) => (
         }
     </p>
 );
-
-export default Result;

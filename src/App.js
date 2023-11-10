@@ -1,10 +1,11 @@
-import { MainContainer } from "./Main/MainContainer";
-import TitleBlock from "./TitleBlock";
-import Form from "./Form";
-import Footer from "./Footer";
+import { useGetRatesData } from "./useGetRatesData";
 import { useResult } from "./useResult";
+
+import { MainContainer } from "./Main/MainContainer";
+import { TitleBlock } from "./TitleBlock";
 import { Prompt } from './Prompt';
-import { useGetRatesData } from "./useGetRatesData.1";
+import { Form } from "./Form";
+import { Footer } from "./Footer";
 
 function App() {
 
