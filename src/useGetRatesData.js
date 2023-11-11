@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 
 export const useGetRatesData = () => {
 
@@ -30,10 +29,21 @@ export const useGetRatesData = () => {
   };
 
   const fetchRates = () => {
+    (async () => {
+      try {
+        const response = await fetch("currency-exchange/data.json");
 
-    axios.get("data.json")
-      .then(response => updateFetchStatus(response.data))
-      .catch(error => updateErrorStatus(error));
+        if (!response.ok) {
+          throw new Error(response.statusText);
+        }
+
+        const rates = await response.json();
+        updateFetchStatus(rates);
+
+      } catch (error) {
+        updateErrorStatus(error);
+      }
+    })();
   };
 
   useEffect(() => {
