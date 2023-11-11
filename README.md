@@ -13,21 +13,25 @@ https://bedicooper.github.io/currency-exchange/
 |   HTML        |   CSS           |   JavaScript        | ReactJS          |
 | :---:         | :---:           | :---:               | :---:            |
 | Google Fonts  | Normalize CSS   | ES6                 | create-react-app |
-| BEM           | grid            |                     | Webpack          |
-|               | media queries   |                     | Babel            |
-|               |                 |                     | React DOM        |
-|               |                 |                     | State, Effect and Ref hooks    |
-|               |                 |                     | Custom hooks     |
+| BEM           | grid            | JSON                | Webpack          |
+|               | media queries   | date handling       | Babel            |
+|               | transformations | **API request**     | React DOM        |
+|               |                 | fetch & **axios**  | State, Effect and Ref hooks    |
+|               |                 | **async / await**   | Custom hooks     |
 |               |                 |                     | setInterval      |
-|               |                 |                     | Style Components |
+|               |                 |                     | Styled Components |
+|               |                 |                     | **{keyframes} from styled** |
 
 ## What's inside?
-My calculator is build on a simple form, with just a few currencies to choose from.
+My calculator is build on a simple form, for clarity, with just a few currencies to choose from. Current exchange rates come from app.currencyapi.com.
 
 Take a look (v.0.1.0):
 ![looping GIF showing interaction with the app.](https://github.com/bedicooper/currency-exchange/blob/main/src/img/currExchAnimation.gif?raw=true)
 
-### What's new? _v.0.3.0_
+### What's new? _v.0.3.1_
+**0.3.1:**
+Currencies and rates now updated with API requests.
+
 **0.3.0:**
 App structure overhall, custom hooks and Style Components.
 
@@ -35,14 +39,16 @@ App structure overhall, custom hooks and Style Components.
 I've added a Clock component to display current date and time in one second intervals.
 
 ### How to use my App?
-1. Enter the amount of money You want to convert,
-2. Select the currency You want to convert from the first list,
-3. Select the currency you are converting to, form the second list,
-4. Click the button to convert,
-5. The resut is displayed under the button.
+0. Loading screen will appear while the App waits for server response.
+1. In case of data corruption or connection problem, an error message will appear.
+2. If the App loaded please, enter the amount of money You want to convert,
+3. Select the currency You want to convert from the first list,
+4. Select the currency you are converting to, form the second list,
+5. Click the button to convert,
+6. The resut is displayed under the button.
 
 ### Currencies
-So far I'm using predetermined rates for those currencies:
+So far I'm using requesting app.currencyapi.com's API for rates of those currencies:
 - PLN
 - EUR
 - GBP
