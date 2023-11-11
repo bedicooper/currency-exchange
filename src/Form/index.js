@@ -21,7 +21,7 @@ export const Form = ({ ratesData, result, calculateResult, amount, setAmount, cu
 
     return (
         <Wrapper onSubmit={onFormSubmit}
-            $hidden={!ratesData.fetchStatus}
+            $hidden={!ratesData.requestStatus}
         >
             <Container $clock>
                 <Clock />

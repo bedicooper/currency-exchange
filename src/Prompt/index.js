@@ -3,7 +3,7 @@ import spinner from "./loadingSpinner.png"
 
 export const Prompt = ({ ratesData }) => (
         <Container
-            $hidden={ratesData.fetchStatus}
+            $hidden={ratesData.requestStatus}
         >
             {ratesData.error
                 ?

@@ -10,7 +10,7 @@ export const Footer = ({ ratesData }) => {
 
     return (
         <FooterContainer
-            $hidden={!ratesData.fetchStatus}
+            $hidden={!ratesData.requestStatus}
         >
             <strong>Uwaga, wszystkie pola są wymagane.</strong><br/>
             Kursy walut pobrano z app.currencyapi.com w dniu {fetchDate()}

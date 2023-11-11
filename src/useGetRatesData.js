@@ -1,19 +1,20 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 export const useGetRatesData = () => {
 
   const [ratesData, setRatesData] = useState({
-    fetchStatus: false,
+    requestStatus: false,
     error: false,
     date: "2023-11-04T23:59:59Z",
     rateValues: [{ code: 'PLN', value: 1 }],
   });
 
-  const updateFetchStatus = (rates) => {
+  const updateRequestStatus = (rates) => {
 
     setRatesData({
       ...ratesData,
-      fetchStatus: true,
+      requestStatus: true,
       date: rates.meta.last_updated_at,
       rateValues: Object.values(rates.data),
     });
@@ -28,18 +29,11 @@ export const useGetRatesData = () => {
     });
   };
 
-  const fetchRates = () => {
+  const requestRates = () => {
     (async () => {
       try {
-        const response = await fetch("currency-exchange/data.json");
-
-        if (!response.ok) {
-          throw new Error(response.statusText);
-        }
-
-        const rates = await response.json();
-        updateFetchStatus(rates);
-
+        const response = await axios.get("currency-exchange/data.json");
+        updateRequestStatus(response.data);
       } catch (error) {
         updateErrorStatus(error);
       }
@@ -48,7 +42,7 @@ export const useGetRatesData = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      fetchRates();
+      requestRates();
     }, 1500);
   }, []);
 
